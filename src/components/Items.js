@@ -1,9 +1,9 @@
 import Item from './Item'
 
-const Items = ({ items }) => {
+const Items = ({ items, onDelete }) => {
   return (
     <>
-      {items.map((item, id) => (<Item key={id} item={item} />))}
+      {items.map((item, id) => (<Item key={id} item={item} onDelete={onDelete} />))}
     </>
   );
 }

@@ -22,10 +22,14 @@ function App() {
     }
   ])
 
+  const deleteHandler = (id) => {
+    setItems((prev) => prev.filter((item) => item.id !== id))
+  }
+
   return (
     <div>
       <Header />
-      {items.length > 0 ? <Items items={items} /> : 'Inventory empty'}
+      {items.length > 0 ? <Items items={items} onDelete={deleteHandler} /> : 'Inventory empty'}
     </div>
   );
 }
