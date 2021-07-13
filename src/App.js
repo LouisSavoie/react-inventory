@@ -26,6 +26,10 @@ function App() {
     setItems(items.map((item) => item.id === id ? {...item, qty: item.qty + 1} : item));
   }
 
+  const decrementHandler = (id) => {
+    setItems(items.map((item) => item.id === id ? {...item, qty: item.qty - 1} : item));
+  }
+
   const deleteHandler = (id) => {
     setItems((prev) => prev.filter((item) => item.id !== id));
   }
@@ -35,7 +39,10 @@ function App() {
       <Header />
       {
         items.length > 0 ? 
-        <Items items={items} onIncrement={incrementHandler} onDelete={deleteHandler} /> : 
+        <Items items={items} 
+          onIncrement={incrementHandler} 
+          onDecrement={decrementHandler} 
+          onDelete={deleteHandler} /> : 
         'Inventory empty'
       }
     </div>
