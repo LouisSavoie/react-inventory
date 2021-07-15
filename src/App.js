@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AddItem from './components/AddItem';
 import Header from './components/Header';
 import Items from './components/Items';
 
@@ -22,6 +23,11 @@ function App() {
     }
   ])
 
+  const addHandler = (item) => {
+    console.log(item);
+    setItems([...items, item]);
+  }
+
   const incrementHandler = (id) => {
     setItems(items.map((item) => item.id === id ? {...item, qty: item.qty + 1} : item));
   }
@@ -37,6 +43,7 @@ function App() {
   return (
     <div>
       <Header />
+      <AddItem onAdd={addHandler} />
       {
         items.length > 0 ? 
         <Items items={items} 
