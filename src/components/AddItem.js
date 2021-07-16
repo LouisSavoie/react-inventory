@@ -22,7 +22,7 @@ const AddItem = ({ onAdd }) => {
     <form onSubmit={onSubmit}>
 
       <div>
-        <label>Item</label>
+        <label>Item:</label>
         <input type='text' 
         placeholder='Item Name' 
         value={name} 
@@ -30,7 +30,7 @@ const AddItem = ({ onAdd }) => {
       </div>
 
       <div>
-        <label>Quantity</label>
+        <label>Quantity:</label>
         <input type='number' 
         placeholder='Quantity' 
         value={qty} 
