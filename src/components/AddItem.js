@@ -12,7 +12,7 @@ const AddItem = ({ onAdd }) => {
       return
     }
 
-    onAdd({ id: Math.floor(Math.random() * 10000), name, qty }); // CHANGE HOW ID WORKS AFTER DB IMPLEMENTATION
+    onAdd({ name, qty });
 
     setName('');
     setQty(0);
